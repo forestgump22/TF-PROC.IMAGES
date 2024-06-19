@@ -40,6 +40,25 @@ Estas técnicas se aplican en tiempo real a cada fotograma de video, resultando 
 
 La aplicación se desarrolló en Python, empleando OpenCV para la captura y procesamiento del video. El código está estructurado para leer cada fotograma del video, aplicar las transformaciones necesarias y mostrar y guardar el video estilizado.
 
+Se llevan a cabo los siguientes pasos:
+
+**Operaciones Morfológicas**:
+
+- Se aplica la operación de cierre (`cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel)`) para rellenar agujeros pequeños en los objetos.
+- Se aplica la operación de apertura (`cv2.morphologyEx(closed, cv2.MORPH_OPEN, kernel)`) para eliminar el ruido y suavizar los objetos.
+
+**Binarización**:
+
+- Se utiliza la función `cv2.threshold(opened, 120, 255, cv2.THRESH_BINARY_INV)` para convertir la imagen a blanco y negro (binaria) mediante una operación de umbralización.
+
+**Cálculo del Gradiente Morfológico**:
+
+- Se calcula el gradiente morfológico utilizando la operación `cv2.morphologyEx(opened, cv2.MORPH_GRADIENT, kernel)`.
+- Se invierte el gradiente (`cv2.bitwise_not(gradient)`) para obtener bordes blancos sobre un fondo negro.
+- Se convierte el gradiente a tres canales (`cv2.cvtColor(gradient_inv, cv2.COLOR_GRAY2BGR)`) para poder aplicarlo a la imagen de color original.
+
+Finalmente, se combina el fotograma original con el gradiente coloreado utilizando la operación `cv2.bitwise_and(frame, gradient_colored)`, lo que produce el efecto de dibujo animado sobre la imagen de video original.
+
 ### Conclusiones
 
 El proyecto logró desarrollar una aplicación que estiliza video en tiempo real en un estilo de dibujo animado usando técnicas de procesamiento de imágenes. La implementación de operaciones morfológicas, detección de bordes y binarización permitió transformar los fotogramas en tiempo real de manera eficiente.
