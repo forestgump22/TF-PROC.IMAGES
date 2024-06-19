@@ -58,5 +58,5 @@ El proyecto logró desarrollar una aplicación que estiliza video en tiempo real
 Este proyecto demuestra la capacidad de aplicar técnicas de procesamiento de imágenes para crear efectos visuales innovadores en tiempo real, abriendo posibilidades para aplicaciones en entretenimiento, redes sociales y producción de contenido visual.
 
 **Referencias**:
-[1] Crecimiento del mercado de animación y efectos visuales, tamaño, tendencias y estadísticas de la industria (mordorintelligence.com)
-[2] Animación y efectos visuales Tendencias del Mercado (mordorintelligence.com)
+[1] Crecimiento del mercado de animación y efectos visuales, tamaño, tendencias y estadísticas de la industria ([mordorintelligence.com](https://www.mordorintelligence.com/es/industry-reports/animation-and-vfx-market))
+[2] Animación y efectos visuales Tendencias del Mercado ([mordorintelligence.com](https://www.mordorintelligence.com/es/industry-reports/animation-and-vfx-market/market-trends))
