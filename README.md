@@ -18,7 +18,7 @@ En el contexto actual de procesamiento de imágenes y video, la creación de efe
 
 #### **Descripción del Problema**
 
-En la creación de contenido visual, convertir videos en un estilo de dibujo animado puede mejorar su atractivo y facilitar la creación de contenido artístico. Sin embargo, realizar esta conversión en tiempo real es un desafío debido a las limitaciones de procesamiento y la necesidad de mantener una alta calidad visual.
+En la creación de contenido visual, convertir videos en un estilo de dibujo animado puede mejorar su atractivo y facilitar la creación de contenido artístico. Sin embargo, realizar esta conversión manualmente es muy costoso. Es por eso que se propone hacer la conversion computacionalmente.
 
 #### **Solución Propuesta**
 
