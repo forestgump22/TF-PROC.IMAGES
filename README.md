@@ -71,16 +71,15 @@ Se llevan a cabo los siguientes pasos:
 - **Segmentación:** Se podrían aplicar técnicas de segmentación como la segmentación basada en umbral (`cv2.threshold()`), aunque en este caso específico se utiliza principalmente para la binarización.
 - **Detección de Objetos:** En el contexto de este proyecto, se detectan los bordes y se resaltan sobre la imagen original para crear el efecto de dibujo animado.
 
-**Binarización y Procesamiento de Imagen:**
-- Se aplica la función `cv2.threshold(opened, 120, 255, cv2.THRESH_BINARY_INV)` para binarizar la imagen y obtener una representación en blanco y negro.
-- Se calcula el gradiente morfológico (`cv2.morphologyEx(opened, cv2.MORPH_GRADIENT, kernel)`) para resaltar aún más los bordes y detalles en la imagen.
-- Se combinan los resultados de la binarización y el gradiente para obtener el efecto final de dibujo animado sobre el fotograma original.
-
 **Cálculo del Gradiente Morfológico**:
 
-- Se calcula el gradiente morfológico utilizando la operación `cv2.morphologyEx(opened, cv2.MORPH_GRADIENT, kernel)`.
+- Se calcula el gradiente morfológico utilizando la operación `cv2.morphologyEx(opened, cv2.MORPH_GRADIENT, kernel)` para resaltar aún más los bordes y detalles en la imagen.
 - Se invierte el gradiente (`cv2.bitwise_not(gradient)`) para obtener bordes blancos sobre un fondo negro.
 - Se convierte el gradiente a tres canales (`cv2.cvtColor(gradient_inv, cv2.COLOR_GRAY2BGR)`) para poder aplicarlo a la imagen de color original.
+
+**Binarización y Procesamiento de Imagen:**
+- Se aplica la función `cv2.threshold(opened, 120, 255, cv2.THRESH_BINARY_INV)` para binarizar la imagen y obtener una representación en blanco y negro.
+- Se combinan los resultados de la binarización y el gradiente para obtener el efecto final de dibujo animado sobre el fotograma original.
 
 **Estilización Final**:
 
