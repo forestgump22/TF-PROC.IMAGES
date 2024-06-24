@@ -10,7 +10,7 @@ En el contexto actual de procesamiento de imágenes y video, la creación de efe
 
 1. **Crecimiento del Mercado**: El mercado de animación y efectos visuales está experimentando un crecimiento significativo. Se espera que alcance los **311,46 mil millones de dólares** para el año 2029, con una tasa de crecimiento anual compuesta del **9,43%** desde 2024[1]. Esto demuestra la creciente demanda de soluciones creativas y visuales en diversas industrias.
 2. **Demanda de Calidad Visual**: Los consumidores buscan experiencias visuales de alta definición. Los cinéfilos exigen producciones de alta calidad con efectos visuales atractivos y animaciones realistas[2]. Esto respalda la importancia de la estilización de video para crear efectos visuales impactantes.
-3. **Ampliación de Géneros y Plataformas**: Los estudios de animación están ampliando los géneros de contenido que producen. Desde películas animadas 3D-UHD hasta aplicaciones de animación y VFX en televisión, publicidad y juegos, la demanda sigue creciendo[1]. Esto sugiere que la estilización de video tiene un papel crucial en la diversificación de contenidos.
+3. **Ampliación de Géneros y Plataformas**: Los estudios de animación están ampliando los géneros de contenido que producen. Desde películas animadas 3D-UHD hasta aplicaciones de animación y VFX en televisión, publicidad y juegos, la demanda sigue creciendo [1]. Esto sugiere que la estilización de video tiene un papel crucial en la diversificación de contenidos.
 
 ### **Objetivos**
 
@@ -36,28 +36,54 @@ La solución propuesta emplea técnicas de procesamiento de imágenes en Python,
 
 Estas técnicas se aplican en tiempo real a cada fotograma de video, resultando en una secuencia estilizada de video con un efecto de dibujo animado.
 
+### Aplicaciones de Segmentación y Detección de Objetos
+
+El procesamiento de imágenes no solo se limita a la estilización de video en tiempo real, sino que también abarca técnicas avanzadas como la segmentación y la detección de objetos.
+
+- **Segmentación:** Permite la identificación precisa de regiones de interés en una imagen, separando objetos del fondo y facilitando el análisis detallado de cada componente visual.
+
+- **Detección de Objetos:** Es fundamental para la identificación y localización automática de múltiples entidades dentro de una escena visual, siendo crucial en aplicaciones como el seguimiento de objetos, la vigilancia automatizada y el reconocimiento de patrones.
+
+Estas técnicas tienen aplicaciones extendidas en diversas industrias, desde la medicina y la seguridad hasta la automoción y la animación. Por ejemplo, en el campo médico, la segmentación de imágenes ayuda en la identificación de estructuras anatómicas en estudios de resonancia magnética, mientras que la detección de objetos es esencial en sistemas de asistencia al conductor para identificar peatones y obstáculos en tiempo real.
+
+La integración de estas técnicas en nuestra aplicación no solo ampliaría sus capacidades funcionales, sino que también mejorarían su adaptabilidad y precisión en diferentes escenarios de uso.
+
 #### **Implementación**
 
 La aplicación se desarrolló en Python, empleando OpenCV para la captura y procesamiento del video. El código está estructurado para leer cada fotograma del video, aplicar las transformaciones necesarias y mostrar y guardar el video estilizado.
 
 Se llevan a cabo los siguientes pasos:
 
-**Operaciones Morfológicas**:
+**Captura de Video**:
 
-- Se aplica la operación de cierre (`cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel)`) para rellenar agujeros pequeños en los objetos.
-- Se aplica la operación de apertura (`cv2.morphologyEx(closed, cv2.MORPH_OPEN, kernel)`) para eliminar el ruido y suavizar los objetos.
+- Se utiliza la función `cv2.VideoCapture()` para obtener el video de entrada desde la cámara web o un archivo de video.
+  
+**Preprocesamiento Inicial**:
 
-**Binarización**:
+- Se convierten los fotogramas de video a escala de grises para facilitar el procesamiento (`cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)`).
 
-- Se utiliza la función `cv2.threshold(opened, 120, 255, cv2.THRESH_BINARY_INV)` para convertir la imagen a blanco y negro (binaria) mediante una operación de umbralización.
+**Operaciones Morfológicas:**
+- Se aplican operaciones morfológicas para mejorar la calidad de la imagen y prepararla para la detección de bordes y binarización.
+  - Cierre morfológico (`cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel)`) para rellenar pequeños agujeros en los objetos.
+  - Apertura morfológica (`cv2.morphologyEx(closed, cv2.MORPH_OPEN, kernel)`) para suavizar los objetos y eliminar el ruido.
+
+**Segmentación y Detección de Objetos:**
+- **Segmentación:** Se podrían aplicar técnicas de segmentación como la segmentación basada en umbral (`cv2.threshold()`), aunque en este caso específico se utiliza principalmente para la binarización.
+- **Detección de Objetos:** En el contexto de este proyecto, se detectan los bordes y se resaltan sobre la imagen original para crear el efecto de dibujo animado.
 
 **Cálculo del Gradiente Morfológico**:
 
-- Se calcula el gradiente morfológico utilizando la operación `cv2.morphologyEx(opened, cv2.MORPH_GRADIENT, kernel)`.
+- Se calcula el gradiente morfológico utilizando la operación `cv2.morphologyEx(opened, cv2.MORPH_GRADIENT, kernel)` para resaltar aún más los bordes y detalles en la imagen.
 - Se invierte el gradiente (`cv2.bitwise_not(gradient)`) para obtener bordes blancos sobre un fondo negro.
 - Se convierte el gradiente a tres canales (`cv2.cvtColor(gradient_inv, cv2.COLOR_GRAY2BGR)`) para poder aplicarlo a la imagen de color original.
 
-Finalmente, se combina el fotograma original con el gradiente coloreado utilizando la operación `cv2.bitwise_and(frame, gradient_colored)`, lo que produce el efecto de dibujo animado sobre la imagen de video original.
+**Binarización y Procesamiento de Imagen:**
+- Se aplica la función `cv2.threshold(opened, 120, 255, cv2.THRESH_BINARY_INV)` para binarizar la imagen y obtener una representación en blanco y negro.
+- Se combinan los resultados de la binarización y el gradiente para obtener el efecto final de dibujo animado sobre el fotograma original.
+
+**Estilización Final**:
+
+- Finalmente, se combina el fotograma original con el gradiente coloreado utilizando la operación `cv2.bitwise_and(frame, gradient_colored)`, lo que produce el efecto de dibujo animado sobre la imagen de video original.
 
 ### Conclusiones
 
