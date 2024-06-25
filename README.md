@@ -57,17 +57,19 @@ Se llevan a cabo los siguientes pasos:
 **Captura de Video**:
 
 - Se utiliza la función `cv2.VideoCapture()` para obtener el video de entrada desde la cámara web o un archivo de video.
-  
+
 **Preprocesamiento Inicial**:
 
 - Se convierten los fotogramas de video a escala de grises para facilitar el procesamiento (`cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)`).
 
 **Operaciones Morfológicas:**
+
 - Se aplican operaciones morfológicas para mejorar la calidad de la imagen y prepararla para la detección de bordes y binarización.
   - Cierre morfológico (`cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel)`) para rellenar pequeños agujeros en los objetos.
   - Apertura morfológica (`cv2.morphologyEx(closed, cv2.MORPH_OPEN, kernel)`) para suavizar los objetos y eliminar el ruido.
 
 **Segmentación y Detección de Objetos:**
+
 - **Segmentación:** Se podrían aplicar técnicas de segmentación como la segmentación basada en umbral (`cv2.threshold()`), aunque en este caso específico se utiliza principalmente para la binarización.
 - **Detección de Objetos:** En el contexto de este proyecto, se detectan los bordes y se resaltan sobre la imagen original para crear el efecto de dibujo animado.
 
@@ -78,6 +80,7 @@ Se llevan a cabo los siguientes pasos:
 - Se convierte el gradiente a tres canales (`cv2.cvtColor(gradient_inv, cv2.COLOR_GRAY2BGR)`) para poder aplicarlo a la imagen de color original.
 
 **Binarización y Procesamiento de Imagen:**
+
 - Se aplica la función `cv2.threshold(opened, 120, 255, cv2.THRESH_BINARY_INV)` para binarizar la imagen y obtener una representación en blanco y negro.
 - Se combinan los resultados de la binarización y el gradiente para obtener el efecto final de dibujo animado sobre el fotograma original.
 
@@ -101,7 +104,6 @@ El proyecto logró desarrollar una aplicación que estiliza video en tiempo real
 
 **Mejoras Potenciales**:
 
-- Explorar el uso de técnicas de aprendizaje profundo para mejorar el estilo de dibujo.
 - Implementar ajustes en tiempo real para permitir la personalización del efecto por parte del usuario.
 - Mejorar la robustez del sistema para funcionar en diversas condiciones de iluminación y movimiento.
 
