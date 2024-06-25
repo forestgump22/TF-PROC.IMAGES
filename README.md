@@ -30,9 +30,9 @@ En la creación de contenido visual, convertir videos en un estilo de dibujo ani
 
 Para lograr la transformación de videos en tiempo real en un estilo de dibujo animado, la solución propuesta utiliza avanzadas técnicas de procesamiento de imágenes implementadas en Python, aprovechando las capacidades de la librería OpenCV. La estrategia incluye una serie de pasos detallados y métodos específicos, diseñados para optimizar la calidad y el rendimiento de la transformación visual:
 
-1. **Operaciones Morfológicas**: Para suavizar la imagen y eliminar ruido.
-2. **Detección de Bordes**: Para resaltar contornos como en un dibujo.
-3. **Binarización**: Para simplificar la imagen en un formato blanco y negro.
+1. **Operaciones Morfológicas**: Para suavizar la imagen y eliminar ruido, lo que es esencial para preparar la imagen para un procesamiento más fino y detallado.
+2. **Detección de Bordes**: Para resaltar contornos como en un dibujo. Como el algoritmo de Canny, que es efectivo para capturar una amplia gama de bordes y es especialmente útil para definir claramente los contornos que imitan el estilo de los dibujos animados.
+3. **Binarización**: Para simplificar la imagen en un formato blanco y negro. Esto simplifica significativamente la representación visual y es parte integral de lograr el efecto de dibujo animado.
 
 Estas técnicas se aplican en tiempo real a cada fotograma de video, resultando en una secuencia estilizada de video con un efecto de dibujo animado.
 
