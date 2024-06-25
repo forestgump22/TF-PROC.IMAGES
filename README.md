@@ -77,6 +77,7 @@ Se llevan a cabo los siguientes pasos:
 Para evaluar la efectividad del proceso de estilización de video en tiempo real utilizando técnicas de procesamiento de imágenes, se realizó una comparativa utilizando una imagen de muestra de un pájaro. A continuación, se presenta la imagen original y la imagen estilizada obtenida mediante una función implementada:
 
 ![image](https://github.com/gatitoEsponjosito/TF-PROC.IMAGES/assets/102689608/c21dae30-c5be-4abd-8906-844cf38b81ce)
+![image](https://github.com/gatitoEsponjosito/TF-PROC.IMAGES/blob/main/cartoon_m21.webp)
 
 **Análisis de Resultados**:
 
