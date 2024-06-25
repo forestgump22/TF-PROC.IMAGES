@@ -85,14 +85,19 @@ Se llevan a cabo los siguientes pasos:
 
 - Finalmente, se combina el fotograma original con el gradiente coloreado utilizando la operación `cv2.bitwise_and(frame, gradient_colored)`, lo que produce el efecto de dibujo animado sobre la imagen de video original.
 
+**Resultados**:
+
+Para evaluar la efectividad del proceso de estilización de video en tiempo real utilizando técnicas de procesamiento de imágenes, se realizó una comparativa utilizando una imagen de muestra de un pájaro. A continuación se presenta la imagen original y la imagen estilizada obtenida mediante una función implementada:
+
+![image](https://github.com/gatitoEsponjosito/TF-PROC.IMAGES/assets/102689608/c21dae30-c5be-4abd-8906-844cf38b81ce)
+
+**Análisis de Resultados**:
+
+La imagen estilizada muestra un efecto visual que simula el estilo de un dibujo animado, caracterizado por líneas más definidas y colores planos. Este resultado se logró aplicando operaciones morfológicas para suavizar y resaltar características, detección de bordes para definir contornos y binarización para simplificar la imagen en blanco y negro. La implementación de estas técnicas permitió transformar la imagen original en una representación estilizada, que puede ser aplicada de manera similar en el procesamiento de video en tiempo real.
+
 ### Conclusiones
 
 El proyecto logró desarrollar una aplicación que estiliza video en tiempo real en un estilo de dibujo animado usando técnicas de procesamiento de imágenes. La implementación de operaciones morfológicas, detección de bordes y binarización permitió transformar los fotogramas en tiempo real de manera eficiente.
-
-**Resultados**:
-
-- La calidad visual del efecto de dibujo animado es consistente y añade un atractivo visual significativo.
-- La aplicación funciona en tiempo real sin una disminución notable en el rendimiento, aunque podría mejorarse aún más mediante la optimización del procesamiento.
 
 **Mejoras Potenciales**:
 
