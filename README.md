@@ -68,10 +68,10 @@ Se llevan a cabo los siguientes pasos:
   - Cierre morfológico (`cv2.morphologyEx(gray, cv2.MORPH_CLOSE, kernel)`) para rellenar pequeños agujeros en los objetos.
   - Apertura morfológica (`cv2.morphologyEx(closed, cv2.MORPH_OPEN, kernel)`) para suavizar los objetos y eliminar el ruido.
 
-**Segmentación y Detección de Objetos:**
+**Segmentación y Detección de Bordes:**
 
 - **Segmentación:** Se podrían aplicar técnicas de segmentación como la segmentación basada en umbral (`cv2.threshold()`), aunque en este caso específico se utiliza principalmente para la binarización.
-- **Detección de Objetos:** En el contexto de este proyecto, se detectan los bordes y se resaltan sobre la imagen original para crear el efecto de dibujo animado.
+- **Detección de Bordes:** En el contexto de este proyecto, se detectan los bordes y se resaltan sobre la imagen original para crear el efecto de dibujo animado.
 
 **Cálculo del Gradiente Morfológico**:
 
