@@ -14,11 +14,11 @@ En el contexto actual de procesamiento de imágenes y video, la creación de efe
 
 ### **Objetivos**
 
-- **General**: Desarrollar una aplicación capaz de estilizar video en tiempo real, aplicando un efecto de dibujo animado a cada fotograma.
+- **General**: Desarrollar una aplicación que permita la estilización de videos en tiempo real, transformándolos en un estilo de dibujo animado. Este proceso no solo pretende ampliar las capacidades visuales y estéticas del video sino también explorar las potencialidades del procesamiento digital de imágenes para aplicaciones en tiempo real.
 - **Específicos**:
-  1. Implementar técnicas de procesamiento de imágenes para simplificar y estilizar los fotogramas de video.
-  2. Lograr una conversión de video en tiempo real sin comprometer significativamente el rendimiento.
-  3. Evaluar la calidad visual y la eficiencia del procesamiento aplicado.
+  1. Establecer un protocolo de pruebas para validar la efectividad y eficiencia de la aplicación. Este protocolo deberá incluir pruebas de usuario para evaluar la experiencia visual y la usabilidad de la aplicación, así como pruebas técnicas que midan el rendimiento del sistema bajo diferentes configuraciones.
+  2. Optimizar los procesos de captura, procesamiento y renderizado del video para funcionar eficientemente en tiempo real. Esto incluye la mejora de la eficiencia computacional mediante el ajuste de parámetros de procesamiento y la posible integración de técnicas de procesamiento paralelo o distribuido.
+  3. Diseñar e implementar algoritmos específicos para la estilización de video que incluyan técnicas de operaciones morfológicas avanzadas, detección de bordes mejorada y binarización inteligente.
 
 ### **Desarrollo**
 
@@ -28,7 +28,7 @@ En la creación de contenido visual, convertir videos en un estilo de dibujo ani
 
 #### **Solución Propuesta**
 
-La solución propuesta emplea técnicas de procesamiento de imágenes en Python, utilizando la librería OpenCV. El enfoque principal incluye:
+Para lograr la transformación de videos en tiempo real en un estilo de dibujo animado, la solución propuesta utiliza avanzadas técnicas de procesamiento de imágenes implementadas en Python, aprovechando las capacidades de la librería OpenCV. La estrategia incluye una serie de pasos detallados y métodos específicos, diseñados para optimizar la calidad y el rendimiento de la transformación visual:
 
 1. **Operaciones Morfológicas**: Para suavizar la imagen y eliminar ruido.
 2. **Detección de Bordes**: Para resaltar contornos como en un dibujo.
